@@ -11,7 +11,8 @@
   DocumentRoot /var/www
   <%= passenger_handler -%>BaseURI <%= @params[:mounted_at] %>
   <% else -%>
-  DocumentRoot <%= @params[:docroot] %>/public
+  # denoncourt added the public suffix, and that was the only change
+  DocumentRoot <%= @params[:docroot] %>public
   <%= passenger_handler -%>BaseURI /
   <% end -%>
   <%= passenger_handler -%>Env <%= @params[:rails_env] %>
